@@ -2,7 +2,7 @@ class Config:
     def __init__(self):
 
         # Image specific configurations
-        self.img_size = 600
+        self.min_img_size = 600
 
         # RPN specific configurations
         self.anchor_box_scales = [128, 256, 512]
