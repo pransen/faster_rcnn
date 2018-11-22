@@ -3,6 +3,7 @@ import keras.backend as K
 
 def get_img_output_length(width, height):
     def get_output_length(input_length):
+        # 16 since effectively 4 pooling layers are use to decrease activation map size
         return input_length / 16
     return get_output_length(width), get_output_length(height)
 
@@ -45,7 +46,7 @@ def nn_base(input_tensor=None, trainable=False):
     x = Conv2D(512, (3, 3), activation='relu', padding='same', name='conv_5_1')(x)
     x = Conv2D(512, (3, 3), activation='relu', padding='same', name='conv_5_2')(x)
     x = Conv2D(512, (3, 3), activation='relu', padding='same', name='conv_5_3')(x)
-    x = MaxPooling2D((2, 2), strides=(2, 2), name='pool_3')(x)
+    # x = MaxPooling2D((2, 2), strides=(2, 2), name='pool_3')(x)
 
     return x
 
