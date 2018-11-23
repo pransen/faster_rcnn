@@ -20,6 +20,9 @@ class Config:
         self.rpn_max_overlap = 0.7
 
         # Input specific configurations
-        self.simple_label_file = 'labels.txt'
+        self.simple_label_filepath = 'C:\\Users\\pransen.ORADEV\\Desktop\\dataset\\labels.txt'
         self.config_save_file = 'config.pickle'
+
+        # training related settings
+        self.num_epochs = 3000
 
